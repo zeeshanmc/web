@@ -7,27 +7,41 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      padding: 30px;
       background: #f4f4f4;
+      margin: 0;
+      padding: 30px;
+      display: flex;
+      flex-direction: row;
+      gap: 40px;
     }
-    h1 {
+
+    .section {
+      flex: 1;
+    }
+
+    h1, h2 {
       color: #333;
     }
+
     ul {
       list-style: none;
       padding-left: 0;
     }
+
     li {
       margin-bottom: 10px;
     }
+
     a {
       text-decoration: none;
       color: #007acc;
       cursor: pointer;
     }
+
     a:hover {
       text-decoration: underline;
     }
+
     video {
       width: 100%;
       max-width: 720px;
@@ -38,38 +52,11 @@
   </style>
 </head>
 <body>
-  <h1>📺 M3U8 Video Player</h1>
-  <ul>
-    <li><a onclick="playStream('https://raw.githubusercontent.com/zeeshanmc/xc1/main/bbs2.html')">BreakingBad Season 2</a></li>
-    <li><a onclick="playStream('https://raw.githubusercontent.com/zeeshanmc/xc1/main/6.m3u8')">6.m3u8</a></li>
-    <li><a onclick="playStream('https://raw.githubusercontent.com/zeeshanmc/xc1/main/7.m3u8')">7.m3u8</a></li>
-    <li><a onclick="playStream('https://raw.githubusercontent.com/zeeshanmc/xc1/main/8.m3u8')">8.m3u8</a></li>
-    <li><a onclick="playStream('https://raw.githubusercontent.com/zeeshanmc/xc1/main/9.m3u8')">9.m3u8</a></li>
-    <li><a onclick="playStream('https://raw.githubusercontent.com/zeeshanmc/xc1/main/fd.m3u8')">fd.m3u8</a></li>
-    <li><a onclick="playStream('https://raw.githubusercontent.com/zeeshanmc/xc1/main/jon.m3u8')">jon.m3u8</a></li>
-  </ul>
-
-  <video id="video" controls></video>
-
-  <script>
-    function playStream(url) {
-      const video = document.getElementById('video');
-      if (Hls.isSupported()) {
-        const hls = new Hls();
-        hls.loadSource(url);
-        hls.attachMedia(video);
-        hls.on(Hls.Events.MANIFEST_PARSED, function () {
-          video.play();
-        });
-      } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
-        video.src = url;
-        video.addEventListener('loadedmetadata', function () {
-          video.play();
-        });
-      } else {
-        alert("Your browser doesn't support HLS playback.");
-      }
-    }
-  </script>
-</body>
-</html>
+  <!-- Streaming Player and Playlist -->
+  <div class="section">
+    <h1>📺 M3U8 Video Player</h1>
+    <ul>
+      <li><a onclick="playStream('https://raw.githubusercontent.com/zeeshanmc/xc1/main/6.m3u8')">6.m3u8</a></li>
+      <li><a onclick="playStream('https://raw.githubusercontent.com/zeeshanmc/xc1/main/7.m3u8')">7.m3u8</a></li>
+      <li><a onclick="playStream('https://raw.githubusercontent.com/zeeshanmc/xc1/main/8.m3u8')">8.m3u8</a></li>
+      <li><a onclick="playStream('https://raw.githubusercontent.c
