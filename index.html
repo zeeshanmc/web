@@ -2,14 +2,29 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>M3U8 Playlist Player</title>
+  <title>Zeeshan's Webpage</title>
   <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
   <style>
     body {
       font-family: Arial, sans-serif;
       background: #f4f4f4;
       margin: 0;
       padding: 30px;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+
+    h1.main-title {
+      font-family: 'Poppins', sans-serif;
+      font-size: 40px;
+      text-align: center;
+      color: #2c3e50;
+      margin-bottom: 0;
+    }
+
+    .container {
       display: flex;
       flex-direction: row;
       gap: 40px;
@@ -19,7 +34,7 @@
       flex: 1;
     }
 
-    h1, h2 {
+    h2 {
       color: #333;
     }
 
@@ -52,29 +67,28 @@
   </style>
 </head>
 <body>
-  <!-- Streaming Player and Playlist -->
-  <div class="section">
-    <h1>📺 M3U8 Video Player</h1>
-    <ul>
-      <li><a onclick="playStream('https://raw.githubusercontent.com/zeeshanmc/xc1/main/6.m3u8')">6.m3u8</a></li>
-      <li><a onclick="playStream('https://raw.githubusercontent.com/zeeshanmc/xc1/main/7.m3u8')">7.m3u8</a></li>
-      <li><a onclick="playStream('https://raw.githubusercontent.com/zeeshanmc/xc1/main/8.m3u8')">8.m3u8</a></li>
-      <li><a onclick="playStream('https://raw.githubusercontent.com/zeeshanmc/xc1/main/9.m3u8')">9.m3u8</a></li>
-      <li><a onclick="playStream('https://raw.githubusercontent.com/zeeshanmc/xc1/main/fd.m3u8')">fd.m3u8</a></li>
-      <li><a onclick="playStream('https://raw.githubusercontent.com/zeeshanmc/xc1/main/jon.m3u8')">jon.m3u8</a></li>
-    </ul>
 
-    <video id="video" controls></video>
-  </div>
+  <h1 class="main-title">Zeeshan's Webpage</h1>
 
-  <!-- Downloadable / Non-Stream Links -->
-  <div class="section">
-    <h2>📥 Downloadable Files</h2>
-    <ul>
-      <li><a href="https://raw.githubusercontent.com/zeeshanmc/xc1/main/bbs2.html" target="_blank">BreakingBad Season 2</a></li>
-      <!-- Add more static or downloadable links below -->
-      <!-- <li><a href="https://example.com/file.mp4" download>Some File.mp4</a></li> -->
-    </ul>
+  <div class="container">
+    <!-- Streaming Player and Playlist -->
+    <div class="section">
+      <h2>📺 M3U8 Video Player</h2>
+      <ul>
+        <li><a onclick="playStream('https://raw.githubusercontent.com/zeeshanmc/xc1/main/fd.m3u8')">fd.m3u8</a></li>
+        <li><a onclick="playStream('https://raw.githubusercontent.com/zeeshanmc/xc1/main/jon.m3u8')">jon.m3u8</a></li>
+      </ul>
+
+      <video id="video" controls></video>
+    </div>
+
+    <!-- Downloadable / Non-Stream Links -->
+    <div class="section">
+      <h2>📥 Downloadable Files</h2>
+      <ul>
+        <li><a href="https://raw.githubusercontent.com/zeeshanmc/xc1/main/bbs2.html" target="_blank">BreakingBad Season 2</a></li>
+      </ul>
+    </div>
   </div>
 
   <script>
