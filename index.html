@@ -44,12 +44,15 @@
     }
 
     li {
-      margin-bottom: 10px;
+      margin-bottom: 12px;
     }
 
     a {
+      display: inline-block;
       text-decoration: none;
       color: #007acc;
+      font-family: monospace;
+      word-break: break-all;
       cursor: pointer;
     }
 
@@ -75,8 +78,12 @@
     <div class="section">
       <h2>📺 M3U8 Video Player</h2>
       <ul>
-        <li><a onclick="playStream('https://raw.githubusercontent.com/zeeshanmc/xc1/main/fd.m3u8')">fd.m3u8</a></li>
-        <li><a onclick="playStream('https://raw.githubusercontent.com/zeeshanmc/xc1/main/jon.m3u8')">jon.m3u8</a></li>
+        <li>
+          <a href="#" onclick="playStream(this.textContent)">https://raw.githubusercontent.com/zeeshanmc/xc1/main/fd.m3u8</a>
+        </li>
+        <li>
+          <a href="#" onclick="playStream(this.textContent)">https://raw.githubusercontent.com/zeeshanmc/xc1/main/jon.m3u8</a>
+        </li>
       </ul>
 
       <video id="video" controls></video>
