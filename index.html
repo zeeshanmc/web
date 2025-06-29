@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <title>Zeeshan's Webpage</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Roboto&display=swap" rel="stylesheet">
   <style>
     body {
@@ -54,12 +53,6 @@
       margin-bottom: 10px;
     }
 
-    video {
-      width: 100%;
-      border-radius: 8px;
-      margin-bottom: 15px;
-    }
-
     ul {
       list-style: none;
       padding: 0;
@@ -78,6 +71,7 @@
       padding: 6px 10px;
       border-radius: 4px;
       transition: all 0.2s ease-in-out;
+      word-break: break-all;
     }
 
     a:hover {
@@ -97,51 +91,28 @@
   <h1 class="main-title">Zeeshan's Webpage</h1>
 
   <div class="container">
-    <!-- Stream Section -->
+    <!-- M3U8 Links Section -->
     <div class="section">
-      <h2>📺 M3U8 Video Player</h2>
-      <video id="video" controls></video>
-
+      <h2>📺 M3U8 Video Links</h2>
       <ul>
         <li>
-          <a href="#" onclick="playStream(this.textContent)">https://raw.githubusercontent.com/zeeshanmc/xc1/main/Openheimer.m3u8</a>
+          <a href="https://raw.githubusercontent.com/zeeshanmc/xc1/main/Openheimer.m3u8" target="_blank">Oppenheimer (2023) {Hindi-English} 720p BluRay ESub</a>
         </li>
         <li>
-          <a href="#" onclick="playStream(this.textContent)">https://raw.githubusercontent.com/zeeshanmc/xc1/main/Thegorge.m3u8</a>
+          <a href="https://raw.githubusercontent.com/zeeshanmc/xc1/main/Thegorge.m3u8" target="_blank">The Gorge (2025) English 720p WEB-DL ESub</a>
         </li>
       </ul>
     </div>
 
-    <!-- Downloads -->
+    <!-- Downloads Section -->
     <div class="section">
       <h2>📥 Downloadable Files</h2>
       <ul>
         <li><a href="https://8849c1bc5e4b2ca85187d3f584a05c45.r2.cloudflarestorage.com/backup/11032686338.rar?response-content-disposition=attachment%3B%20filename%3D%22Breaking%20Bad%20S02%20E01-13%20BluRay%201080p%20x265%2010bit%20Hindi%20English%20ESub%20-%20mkvCinemas.rar%22&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=8014459f128d9d41b32a26abb2f2e8c3%2F20250629%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20250629T222457Z&X-Amz-SignedHeaders=host&X-Amz-Expires=10800&X-Amz-Signature=39f36e1a0f7164fdfed688d5b4c81feb88770fd9d49692b1d4fbb933f1f4d0da" target="_blank">Breaking Bad Season 2</a></li>
-        <li><a href="https://8849c1bc5e4b2ca85187d3f584a05c45.r2.cloudflarestorage.com/backup/10994111085.rar?response-content-disposition=attachment%3B%20filename%3D%22Breaking%20Bad%20S03%20E01-13%20BluRay%201080p%20x265%2010bit%20Hindi%20English%20ESub%20-%20mkvCinemas.rar%22&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=8014459f128d9d41b32a26abb2f2e8c3%2F20250629%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20250629T230749Z&X-Amz-SignedHeaders=host&X-Amz-Expires=10800&X-Amz-Signature=0ea743c4c65ac3ca6a3fe1798ec09edf05d37180b2e8d8b3d40ff4d001182903" target="_blank">BreakingBad Season 3</a></li>
+        <li><a href="https://8849c1bc5e4b2ca85187d3f584a05c45.r2.cloudflarestorage.com/backup/10994111085.rar?response-content-disposition=attachment%3B%20filename%3D%22Breaking%20Bad%20S03%20E01-13%20BluRay%201080p%20x265%2010bit%20Hindi%20English%20ESub%20-%20mkvCinemas.rar%22&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=8014459f128d9d41b32a26abb2f2e8c3%2F20250629%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20250629T230749Z&X-Amz-SignedHeaders=host&X-Amz-Expires=10800&X-Amz-Signature=0ea743c4c65ac3ca6a3fe1798ec09edf05d37180b2e8d8b3d40ff4d001182903" target="_blank">Breaking Bad Season 3</a></li>
       </ul>
     </div>
   </div>
-
-  <script>
-    function playStream(url) {
-      const video = document.getElementById('video');
-      if (Hls.isSupported()) {
-        const hls = new Hls();
-        hls.loadSource(url);
-        hls.attachMedia(video);
-        hls.on(Hls.Events.MANIFEST_PARSED, function () {
-          video.play();
-        });
-      } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
-        video.src = url;
-        video.addEventListener('loadedmetadata', function () {
-          video.play();
-        });
-      } else {
-        alert("Your browser doesn't support HLS playback.");
-      }
-    }
-  </script>
 
 </body>
 </html>
