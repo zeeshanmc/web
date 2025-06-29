@@ -59,4 +59,43 @@
       <li><a onclick="playStream('https://raw.githubusercontent.com/zeeshanmc/xc1/main/6.m3u8')">6.m3u8</a></li>
       <li><a onclick="playStream('https://raw.githubusercontent.com/zeeshanmc/xc1/main/7.m3u8')">7.m3u8</a></li>
       <li><a onclick="playStream('https://raw.githubusercontent.com/zeeshanmc/xc1/main/8.m3u8')">8.m3u8</a></li>
-      <li><a onclick="playStream('https://raw.githubusercontent.c
+      <li><a onclick="playStream('https://raw.githubusercontent.com/zeeshanmc/xc1/main/9.m3u8')">9.m3u8</a></li>
+      <li><a onclick="playStream('https://raw.githubusercontent.com/zeeshanmc/xc1/main/fd.m3u8')">fd.m3u8</a></li>
+      <li><a onclick="playStream('https://raw.githubusercontent.com/zeeshanmc/xc1/main/jon.m3u8')">jon.m3u8</a></li>
+    </ul>
+
+    <video id="video" controls></video>
+  </div>
+
+  <!-- Downloadable / Non-Stream Links -->
+  <div class="section">
+    <h2>📥 Downloadable Files</h2>
+    <ul>
+      <li><a href="https://raw.githubusercontent.com/zeeshanmc/xc1/main/bbs2.html" target="_blank">BreakingBad Season 2</a></li>
+      <!-- Add more static or downloadable links below -->
+      <!-- <li><a href="https://example.com/file.mp4" download>Some File.mp4</a></li> -->
+    </ul>
+  </div>
+
+  <script>
+    function playStream(url) {
+      const video = document.getElementById('video');
+      if (Hls.isSupported()) {
+        const hls = new Hls();
+        hls.loadSource(url);
+        hls.attachMedia(video);
+        hls.on(Hls.Events.MANIFEST_PARSED, function () {
+          video.play();
+        });
+      } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+        video.src = url;
+        video.addEventListener('loadedmetadata', function () {
+          video.play();
+        });
+      } else {
+        alert("Your browser doesn't support HLS playback.");
+      }
+    }
+  </script>
+</body>
+</html>
