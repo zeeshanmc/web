@@ -1,1 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Zeeshan's Movies</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Roboto&display=swap" rel="stylesheet">
+  <style>
+    /* Same CSS as in index.html */
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(to right, rgba(30, 30, 47, 0.7), rgba(42, 42, 61, 0.7)),
+                  url('https://images3.alphacoders.com/134/thumb-1920-1342293.png');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      color: #f5f5f5;
+      padding: 20px;
+      backdrop-filter: blur(4px);
+      background-blend-mode: multiply;
+    }
 
+    h1.main-title {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 48px;
+      text-align: center;
+      margin-bottom: 30px;
+      color: #00ffe5;
+      text-shadow: 0 0 10px #00ffe5;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+    }
+
+    .section {
+      flex: 1 1 400px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 20px;
+      border-radius: 12px;
+      backdrop-filter: blur(6px);
+      box-shadow: 0 0 15px rgba(0, 255, 229, 0.1);
+    }
+
+    h2 {
+      font-family: 'Orbitron', sans-serif;
+      color: #00ffe5;
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    li {
+      margin-bottom: 12px;
+    }
+
+    a {
+      display: inline-block;
+      text-decoration: none;
+      color: #00ffe5;
+      font-family: monospace;
+      background-color: rgba(0, 255, 229, 0.1);
+      padding: 6px 10px;
+      border-radius: 4px;
+      transition: all 0.2s ease-in-out;
+      word-break: break-word;
+    }
+
+    a:hover {
+      background-color: rgba(0, 255, 229, 0.3);
+      transform: scale(1.03);
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+    }
+
+    /* Simple nav */
+    nav {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    nav a {
+      margin: 0 15px;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1 class="main-title">Zeeshan's Movies</h1>
+
+  <nav>
+    <a href="index.html">🏠 Home</a>
+    <a href="hindimovies.html">🎬Hindi Movies</a>
+    <a href="dualmovies.html">🎬Dual Audio Movies</a>
+  </nav>
+
+  <div class="container">
+    <div class="section">
+      <h2>🎬 Movies</h2>
+      <ul>
+        <li><a href=""></a></li>
+        <!-- Add more movie links here -->
+      </ul>
+    </div>
+  </div>
+
+</body>
+</html>
